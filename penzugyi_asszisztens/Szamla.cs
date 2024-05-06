@@ -28,10 +28,20 @@ namespace penzugyi_asszisztens
             KoltsegKezelo.AdatokMentese();
         }
 
+        public void AddKiadasMentesNelkul(double osszeg, string leiras, DateTime datum)
+        {
+            kiadasok.Add(new Kiadas(osszeg, leiras, datum));
+        }
+
         public void AddBevetel(double osszeg, string leiras, DateTime datum)
         {
             bevetelek.Add(new Bevetel(osszeg, leiras, datum));
             KoltsegKezelo.AdatokMentese();
+        }
+
+        public void AddBevetelMentesNelkul(double osszeg, string leiras, DateTime datum)
+        {
+            bevetelek.Add(new Bevetel(osszeg, leiras, datum));
         }
 
         public double CalculateBalance()

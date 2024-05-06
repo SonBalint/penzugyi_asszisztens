@@ -42,47 +42,50 @@ namespace penzugyi_asszisztens
 
         public static void AdatokMentese()
         {
-            StreamWriter writer = new StreamWriter(adatFajl);
-            foreach (var szamla in szamlak.Values)
+            using (StreamWriter writer = new StreamWriter(adatFajl))
             {
-                writer.WriteLine($"Szamla,{szamla.SzamlaNev},{szamla.KezdoEgyenleg}");
-                foreach (var kiadas in szamla.Kiadasok)
+                foreach (var szamla in szamlak.Values)
                 {
-                    writer.WriteLine($"Kiadás,{kiadas.Osszeg},{kiadas.Leiras},{kiadas.Datum.ToString("o", CultureInfo.InvariantCulture)}");
-                }
-                foreach (var bevetel in szamla.Bevetelek)
-                {
-                    writer.WriteLine($"Bevétel,{bevetel.Osszeg},{bevetel.Leiras},{bevetel.Datum.ToString("o", CultureInfo.InvariantCulture)}");
+                    writer.WriteLine($"Szamla,{szamla.SzamlaNev},{szamla.KezdoEgyenleg}");
+                    foreach (var kiadas in szamla.Kiadasok)
+                    {
+                        writer.WriteLine($"Kiadás,{kiadas.Osszeg},{kiadas.Leiras},{kiadas.Datum.ToString("o", CultureInfo.InvariantCulture)}");
+                    }
+                    foreach (var bevetel in szamla.Bevetelek)
+                    {
+                        writer.WriteLine($"Bevétel,{bevetel.Osszeg},{bevetel.Leiras},{bevetel.Datum.ToString("o", CultureInfo.InvariantCulture)}");
+                    }
                 }
             }
-            writer.Close();
         }
 
         private void AdatokBetoltese()
         {
             if (File.Exists(adatFajl))
             {
-                StreamReader reader = new StreamReader(adatFajl);
-                Szamla aktSzamla = null;
-                string sor;
-                while ((sor = reader.ReadLine()) != null)
+                using (StreamReader reader = new StreamReader(adatFajl))
                 {
-                    var adatok = sor.Split(',');
-                    if (adatok[0] == "Szamla")
+                    Szamla aktSzamla = null;
+                    string sor;
+                    while (!reader.EndOfStream)
                     {
-                        aktSzamla = new Szamla(adatok[1], Convert.ToDouble(adatok[2]));
-                        szamlak.Add(adatok[1], aktSzamla);
-                    }
-                    else if (adatok[0] == "Kiadás" && aktSzamla != null)
-                    {
-                        aktSzamla.AddKiadas(Convert.ToDouble(adatok[1]), adatok[2], DateTime.Parse(adatok[3], CultureInfo.InvariantCulture));
-                    }
-                    else if (adatok[0] == "Bevétel" && aktSzamla != null)
-                    {
-                        aktSzamla.AddBevetel(Convert.ToDouble(adatok[1]), adatok[2], DateTime.Parse(adatok[3], CultureInfo.InvariantCulture));
+                        sor = reader.ReadLine();
+                        var adatok = sor.Split(',');
+                        if (adatok[0] == "Szamla")
+                        {
+                            aktSzamla = new Szamla(adatok[1], Convert.ToDouble(adatok[2]));
+                            szamlak.Add(adatok[1], aktSzamla);
+                        }
+                        else if (adatok[0] == "Kiadás" && aktSzamla != null)
+                        {
+                            aktSzamla.AddKiadasMentesNelkul(Convert.ToDouble(adatok[1]), adatok[2], DateTime.Parse(adatok[3], CultureInfo.InvariantCulture));
+                        }
+                        else if (adatok[0] == "Bevétel" && aktSzamla != null)
+                        {
+                            aktSzamla.AddBevetelMentesNelkul(Convert.ToDouble(adatok[1]), adatok[2], DateTime.Parse(adatok[3], CultureInfo.InvariantCulture));
+                        }
                     }
                 }
-                reader.Close();
             }
         }
     }
