@@ -76,13 +76,17 @@ namespace penzugyi_asszisztens
         public void ListazTranzakciok()
         {
             Console.WriteLine($"Tranzakciók a(z) '{SzamlaNev}' számlán:");
+            int kiadasSorszam = 0;
+            int bevetelSorszam = 0;
             foreach (var kiadas in kiadasok)
             {
-                Console.WriteLine($"Kiadás - Összeg: {kiadas.Osszeg}, Leírás: {kiadas.Leiras}, Dátum: {kiadas.Datum.ToShortDateString()}");
+                Console.WriteLine($"Kiadás [{kiadasSorszam}] - Összeg: {kiadas.Osszeg}, Leírás: {kiadas.Leiras}, Dátum: {kiadas.Datum.ToShortDateString()}");
+                kiadasSorszam++;
             }
             foreach (var bevetel in bevetelek)
             {
-                Console.WriteLine($"Bevétel - Összeg: {bevetel.Osszeg}, Leírás: {bevetel.Leiras}, Dátum: {bevetel.Datum.ToShortDateString()}");
+                Console.WriteLine($"Bevétel [{bevetelSorszam}] - Összeg: {bevetel.Osszeg}, Leírás: {bevetel.Leiras}, Dátum: {bevetel.Datum.ToShortDateString()}");
+                bevetelSorszam++;
             }
         }
     }
