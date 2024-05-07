@@ -1,99 +1,99 @@
-# Pénzügyi Asszsitens
+# PÃ©nzÃ¼gyi Asszisztens
 ## Absztrakt
-A program egy pénzügyi asszisztens, amely segítséget nyújt a felhasználóknak a pénzügyeik kezelésében.
+A program egy pÃ©nzÃ¼gyi asszisztens, amely segÃ­tsÃ©get nyÃºjt a felhasznÃ¡lÃ³knak a pÃ©nzÃ¼gyeik kezelÃ©sÃ©ben.
 
-## Funkciók
-- Számla létrehozása
-- Számla törlése
-- Számla egyenlegének lekérdezése
-- Tranzakciók lekérdezése
-- Kiadások/Bevételek hozzáadása
-- Kiadások/Bevételek törlése
+## FunkciÃ³k
+- SzÃ¡mla lÃ©trehozÃ¡sa
+- SzÃ¡mla tÃ¶rlÃ©se
+- SzÃ¡mla egyenlegÃ©nek lekÃ©rdezÃ©se
+- TranzakciÃ³k lekÃ©rdezÃ©se
+- KiadÃ¡sok/BevÃ©telek hozzÃ¡adÃ¡sa
+- KiadÃ¡sok/BevÃ©telek tÃ¶rlÃ©se
 
-## Használat
-Az asszisztens egy konzolos felületen keresztül kommunikál a felhasználóval. A futtatás után a program menüpontokat kínál a felhasználónak, amelyek segítségével a felhasználó elvégezheti a kívánt mûveleteket.
+## HasznÃ¡lat
+Az asszisztens egy konzolos felÃ¼leten keresztÃ¼l kommunikÃ¡l a felhasznÃ¡lÃ³val. A futtatÃ¡s utÃ¡n a program menÃ¼pontokat kÃ­nÃ¡l a felhasznÃ¡lÃ³nak, amelyek segÃ­tsÃ©gÃ©vel a felhasznÃ¡lÃ³ elvÃ©gezheti a kÃ­vÃ¡nt mÅ±veleteket.
 ```
-1. Számla hozzáadása
-2. Kiadás hozzáadása
-3. Bevétel hozzáadása
-4. Számla egyenlegének lekérdezése
-5. Kiadás eltávolítása
-6. Bevétel eltávolítása
-7. Számla eltávolítása
-8. Tranzakciók listázása
-9. Kilépés
-```
-
-A menüpontok közötti navigálást a megfelelõ számjegy beírásával lehet elvégezni.
-
-### 1. Számla hozzáadása
-A szoftver bekér egy számla nevet és egy kezdõ egyenleget, majd létrehoz egy új számlát.
-```
-Add meg a számla nevét: <számla neve>
-Add meg a kezdõ egyenleget: <kezdõ egyenleg>
+1. SzÃ¡mla hozzÃ¡adÃ¡sa
+2. KiadÃ¡s hozzÃ¡adÃ¡sa
+3. BevÃ©tel hozzÃ¡adÃ¡sa
+4. SzÃ¡mla egyenlegÃ©nek lekÃ©rdezÃ©se
+5. KiadÃ¡s eltÃ¡volÃ­tÃ¡sa
+6. BevÃ©tel eltÃ¡volÃ­tÃ¡sa
+7. SzÃ¡mla eltÃ¡volÃ­tÃ¡sa
+8. TranzakciÃ³k listÃ¡zÃ¡sa
+9. KilÃ©pÃ©s
 ```
 
-### 2. Kiadás hozzáadása
-A szoftver bekér egy számla nevet, majd egy kiadás összegét és leírását, ez után pedig hozzáadja a kiadást a megadott számlához.
+A menÃ¼pontok kÃ¶zÃ¶tti navigÃ¡lÃ¡st a megfelelÅ‘ szÃ¡mjegy beÃ­rÃ¡sÃ¡val lehet elvÃ©gezni.
+
+### 1. SzÃ¡mla hozzÃ¡adÃ¡sa
+A szoftver bekÃ©r egy szÃ¡mla nevet Ã©s egy kezdÅ‘ egyenleget, majd lÃ©trehoz egy Ãºj szÃ¡mlÃ¡t.
 ```
-Add meg a számla nevét: <számla neve>
-Add meg az összeget: <kiadás összege>
-Add meg a leírást: <kiadás leírása>
+Add meg a szÃ¡mla nevÃ©t: <szÃ¡mla neve>
+Add meg a kezdÅ‘ egyenleget: <kezdÅ‘ egyenleg>
 ```
 
-### 3. Bevétel hozzáadása
-A szoftver bekér egy számla nevet, majd egy bevétel összegét és leírását, ez után pedig hozzáadja a bevételt a megadott számlához.
+### 2. KiadÃ¡s hozzÃ¡adÃ¡sa
+A szoftver bekÃ©r egy szÃ¡mla nevet, majd egy kiadÃ¡s Ã¶sszegÃ©t Ã©s leÃ­rÃ¡sÃ¡t, ez utÃ¡n pedig hozzÃ¡adja a kiadÃ¡st a megadott szÃ¡mlÃ¡hoz.
 ```
-Add meg a számla nevét: <számla neve>
-Add meg az összeget: <bevétel összege>
-Add meg a leírást: <bevétel leírása>
-```
-
-### 4. Számla egyenlegének lekérdezése
-A szoftver bekér egy számla nevet, majd kiírja a megadott számla egyenlegét.
-```
-Add meg a számla nevét: <számla neve>
-A(z) <számla neve> egyenlege: <egyenleg>
+Add meg a szÃ¡mla nevÃ©t: <szÃ¡mla neve>
+Add meg az Ã¶sszeget: <kiadÃ¡s Ã¶sszege>
+Add meg a leÃ­rÃ¡st: <kiadÃ¡s leÃ­rÃ¡sa>
 ```
 
-### 5. Kiadás eltávolítása
-A szoftver bekér egy számla nevet, majd egy kiadás sorszámát (ez a 8-as, Transzakciók listázása menüponttal lekérdezhetõ), majd törli a megadott kiadást a megadott számláról.
+### 3. BevÃ©tel hozzÃ¡adÃ¡sa
+A szoftver bekÃ©r egy szÃ¡mla nevet, majd egy bevÃ©tel Ã¶sszegÃ©t Ã©s leÃ­rÃ¡sÃ¡t, ez utÃ¡n pedig hozzÃ¡adja a bevÃ©telt a megadott szÃ¡mlÃ¡hoz.
 ```
-Add meg a számla nevét, ahol a kiadást eltávolítani kívánod: <számla neve>
-Add meg a kiadás sorszámát: <kiadás sorszáma>
-```
-
-### 6. Bevétel eltávolítása
-A szoftver bekér egy számla nevet, majd egy bevétel sorszámát (ez a 8-as, Transzakciók listázása menüponttal lekérdezhetõ), majd törli a megadott bevételt a megadott számláról.
-```
-Add meg a számla nevét, ahol a bevételt eltávolítani kívánod: <számla neve>
-Add meg a bevétel sorszámát: <bevétel sorszáma>
+Add meg a szÃ¡mla nevÃ©t: <szÃ¡mla neve>
+Add meg az Ã¶sszeget: <bevÃ©tel Ã¶sszege>
+Add meg a leÃ­rÃ¡st: <bevÃ©tel leÃ­rÃ¡sa>
 ```
 
-### 7. Számla eltávolítása
-A szoftver bekér egy számla nevet, majd törli a megadott számlát.
+### 4. SzÃ¡mla egyenlegÃ©nek lekÃ©rdezÃ©se
+A szoftver bekÃ©r egy szÃ¡mla nevet, majd kiÃ­rja a megadott szÃ¡mla egyenlegÃ©t.
 ```
-Add meg az eltávolítandó számla nevét: <számla neve>
-```
-
-### 8. Tranzakciók listázása
-A szoftver bekér egy számla nevet, majd kiírja a megadott számla összes tranzakcióját.
-```
-Tranzakciók a(z) '<számla neve>' számlán:
-<Bevétel/Kiadás> [<sorszám>] - Összeg: <összeg>, Leírás: <leírás>, Dátum: <dátum>
+Add meg a szÃ¡mla nevÃ©t: <szÃ¡mla neve>
+A(z) <szÃ¡mla neve> egyenlege: <egyenleg>
 ```
 
-### 9. Kilépés
-A program kilép.
+### 5. KiadÃ¡s eltÃ¡volÃ­tÃ¡sa
+A szoftver bekÃ©r egy szÃ¡mla nevet, majd egy kiadÃ¡s sorszÃ¡mÃ¡t (ez a 8-as, TranszakciÃ³k listÃ¡zÃ¡sa menÃ¼ponttal lekÃ©rdezhetÅ‘), majd tÃ¶rli a megadott kiadÃ¡st a megadott szÃ¡mlÃ¡rÃ³l.
+```
+Add meg a szÃ¡mla nevÃ©t, ahol a kiadÃ¡st eltÃ¡volÃ­tani kÃ­vÃ¡nod: <szÃ¡mla neve>
+Add meg a kiadÃ¡s sorszÃ¡mÃ¡t: <kiadÃ¡s sorszÃ¡ma>
+```
 
-## Adatok Mentése
-A szoftver a számlák és a tranzakciók adatait minden egyes mûvelet után egy `penzugyek.txt` fájlba menti el a futtatható fájé mellé, amely a program következõ indításakor betöltõdik.
+### 6. BevÃ©tel eltÃ¡volÃ­tÃ¡sa
+A szoftver bekÃ©r egy szÃ¡mla nevet, majd egy bevÃ©tel sorszÃ¡mÃ¡t (ez a 8-as, TranszakciÃ³k listÃ¡zÃ¡sa menÃ¼ponttal lekÃ©rdezhetÅ‘), majd tÃ¶rli a megadott bevÃ©telt a megadott szÃ¡mlÃ¡rÃ³l.
+```
+Add meg a szÃ¡mla nevÃ©t, ahol a bevÃ©telt eltÃ¡volÃ­tani kÃ­vÃ¡nod: <szÃ¡mla neve>
+Add meg a bevÃ©tel sorszÃ¡mÃ¡t: <bevÃ©tel sorszÃ¡ma>
+```
 
-## Követelmények
-A szoftver képes bármilyen Windows operációs rendszert használó számítógépen futni.
+### 7. SzÃ¡mla eltÃ¡volÃ­tÃ¡sa
+A szoftver bekÃ©r egy szÃ¡mla nevet, majd tÃ¶rli a megadott szÃ¡mlÃ¡t.
+```
+Add meg az eltÃ¡volÃ­tandÃ³ szÃ¡mla nevÃ©t: <szÃ¡mla neve>
+```
 
-## Telepítés
-A program futtatásához nincs szükség telepítésre. A program futtatható fájlját elég csak elindítani.
+### 8. TranzakciÃ³k listÃ¡zÃ¡sa
+A szoftver bekÃ©r egy szÃ¡mla nevet, majd kiÃ­rja a megadott szÃ¡mla Ã¶sszes tranzakciÃ³jÃ¡t.
+```
+TranzakciÃ³k a(z) '<szÃ¡mla neve>' szÃ¡mlÃ¡n:
+<BevÃ©tel/KiadÃ¡s> [<sorszÃ¡m>] - Ã–sszeg: <Ã¶sszeg>, LeÃ­rÃ¡s: <leÃ­rÃ¡s>, DÃ¡tum: <dÃ¡tum>
+```
 
-## Fejlesztõk
-- [Sonkoly Bálint](https://github.com/SonBalint)
+### 9. KilÃ©pÃ©s
+A program kilÃ©p.
+
+## Adatok MentÃ©se
+A szoftver a szÃ¡mlÃ¡k Ã©s a tranzakciÃ³k adatait minden egyes mÅ±velet utÃ¡n egy `penzugyek.txt` fÃ¡jlba menti el a futtathatÃ³ fÃ¡jÃ© mellÃ©, amely a program kÃ¶vetkezÅ‘ indÃ­tÃ¡sakor betÃ¶ltÅ‘dik.
+
+## KÃ¶vetelmÃ©nyek
+A szoftver kÃ©pes bÃ¡rmilyen Windows operÃ¡ciÃ³s rendszert hasznÃ¡lÃ³ szÃ¡mÃ­tÃ³gÃ©pen futni.
+
+## TelepÃ­tÃ©s
+A program futtatÃ¡sÃ¡hoz nincs szÃ¼ksÃ©g telepÃ­tÃ©sre. A program futtathatÃ³ fÃ¡jljÃ¡t elÃ©g csak elindÃ­tani.
+
+## FejlesztÅ‘k
+- [Sonkoly BÃ¡lint](https://github.com/SonBalint)
